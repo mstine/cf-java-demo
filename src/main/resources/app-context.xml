@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jdbc
+        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.mattstine.cfdemo.web"/>
+    <!--<context:property-placeholder location="classpath:vcloud.properties, classpath:jdbc.properties"/>-->
+
+    <!--<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">-->
+        <!--<jdbc:script location="classpath:/org/springframework/batch/core/schema-postgresql.sql"/>-->
+        <!--<jdbc:script location="classpath:/app.sql"/>-->
+    <!--</jdbc:initialize-database>-->
+
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"-->
+          <!--p:driverClassName="${jdbc.driver}"-->
+          <!--p:url="${jdbc.url}"-->
+          <!--p:username="${jdbc.user}"-->
+          <!--p:password="${jdbc.password}"/>-->
+
+    <!--<bean id="transactionManager" lazy-init="true"-->
+          <!--class="org.springframework.jdbc.datasource.DataSourceTransactionManager"-->
+          <!--p:dataSource-ref="dataSource"/>-->
+
+    <!--<import resource="batch-context.xml"/>-->
+    <!--<import resource="rabbit-context.xml"/>-->
+    <!--<import resource="integration-context.xml"/>-->
+    <!--<import resource="vcloud-context.xml"/>-->
+
+</beans>
