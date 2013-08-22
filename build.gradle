@@ -2,6 +2,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'war'
 apply plugin: 'jetty'
+apply plugin: 'eclipse'
 
 repositories {
     mavenLocal()
@@ -29,3 +30,6 @@ dependencies {
     runtime "org.sitemesh:sitemesh:3.0-alpha-2"
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
+}
