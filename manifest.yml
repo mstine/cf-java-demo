@@ -5,4 +5,4 @@ applications:
   instances: 1
   host: cf-java-demo
   domain: cfapps.io
-  path: build/libs/cf-demo.war
+  path: cf-demo.war
