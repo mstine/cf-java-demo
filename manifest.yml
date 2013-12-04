@@ -1,8 +1,19 @@
 ---
+memory: 512M
+instances: 3
+path: build/libs/cf-demo.war
 applications:
-- name: cf-java-demo
-  memory: 512M
-  instances: 1
-  host: cf-java-demo
+- name: cf-demo
+  host: cf-demo-${random-word}
   domain: cfapps.io
-  path: cf-demo.war
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+- name: cf-demo-rsm
+  host: cf-demo-rsm-${random-word}
+  domain: cfapps.io
+  buildpack: https://github.com/mstine/java-buildpack.git
+  services:
+    redis-session-store:
+      label: rediscloud
+      provider: garantiadata
+      version: n/a
+      plan: 25mb
